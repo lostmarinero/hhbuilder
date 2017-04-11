@@ -1,0 +1,357 @@
+
+/* ################ */
+/* Color Guide */
+/* ################ */
+
+/*
+#808080 - Body Background
+#ff9c2a - Header, Button, Checkbox, Submit Background
+#fff    - Form Background, Submit Text
+#fdf9f3 - List Background
+
+#ff9c2a - Submit Button
+#ffb765 - Submit Button Hover
+#3498db - Add Button
+#3cb0fd - Add Button Hover
+#ff392e - Delete Button
+#ff6057 - Delete Button Hover
+
+
+
+#e6e6e6 - Input Background
+#333    - Input Border
+#d8000c - Error Border, Error Text
+#ffbaba - Error Background
+#4F8A10 - Success Border
+#DFF2BF - Success Background
+*/
+
+
+/* ################ */
+/* General Styling */
+/* ################ */
+
+body {
+    background-color: #808080;
+}
+
+
+/* ################ */
+/* Header Styling */
+/* ################ */
+
+body h1 {
+    background-color: #ff9c2a;
+    padding: 0.67em 0;
+    width: 100%;
+    border-radius: 5px 5px 0 0;
+    text-align: center;
+    max-width: 840px;
+    margin: 0 auto;
+    display: block;
+}
+
+
+/* ################ */
+/* Page Layout Styling */
+/* ################ */
+
+.builder {
+    background-color: #fff;
+    border-radius: 0 0 5px 5px;
+    padding-bottom: 1rem;
+    position: relative;
+    width: 100%;
+    max-width: 840px;
+    margin: 0 auto;
+
+    /* padding-top is to get the div to connect visually with the header */
+    padding-top: 1px;
+}
+
+form {
+    margin: 0 auto;
+    margin-top: 1rem;
+    width: 25rem;
+}
+
+form div {
+    margin: 1rem auto;
+    width: 100%;
+}
+
+
+/* ################ */
+/* Information List Styling */
+/* ################ */
+
+.household {
+    width: 80%;
+    overflow: auto;
+    border: 1px solid black;
+    border-radius: 2px;
+    padding: 1rem;
+    margin: 1rem auto;
+    background-color: #fdf9f3;
+}
+
+.household:empty {
+    display: none;
+    border: none;
+}
+
+.household li {
+    font-size: 1.5rem;
+    width: 100%;
+    overflow: auto;
+    display: inline-block;
+    margin-left: 1rem;
+}
+
+
+/* ################ */
+/* Fields Styling */
+/* ################ */
+
+*:focus {
+    outline: none;
+}
+
+
+label {
+    font-size: 1.3rem;
+    font-weight: 500;
+    text-align: right;
+    width: 100%;
+}
+
+label,
+input,
+select {
+    display: inline-block;
+    margin: 0.25rem 0;
+}
+
+input,
+select {
+    border: 2px solid #333;
+    margin-left: 2rem;
+    width: 14rem;
+    height: 2.4rem;
+    outline: 0;
+    border-radius: 2px;
+    text-align: left;
+    box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    -webkit-appearance: none;
+    background-color: #e6e6e6;
+}
+
+input:focus,
+select:focus {
+    outline: 0;
+}
+
+input:valid.visited,
+select:valid.visited {
+    border: 2px solid #4f8a10;
+    background-color: #dff2bf;
+}
+
+input:invalid.visited,
+select:invalid.visited {
+    border: 2px solid #d8000c;
+    background-color: #ffbaba;
+    box-shadow: none;
+    outline: 0;
+}
+
+
+/* ################ */
+/* Input Text Styling */
+/* ################ */
+
+input[name="age"] {
+    padding: 0.1rem 1rem;
+    font-size: 1rem;
+}
+
+
+/* ################ */
+/* Dropdown Styling */
+/* ################ */
+
+select {
+    font-size: 1rem;
+    overflow: hidden;
+    padding-left: 1rem;
+}
+
+
+/* ################ */
+/* Checkbox Styling */
+/* ################ */
+
+input[name='smoker'] {
+    line-height: 1.2rem;
+    padding: 0.1rem;
+    width: 2rem;
+    height: 2rem;
+    position: relative;
+    vertical-align: middle;
+    margin-right: 11.9rem;
+}
+
+input[name='smoker']::before {
+    cursor: pointer;
+    line-height: 1.2rem;
+    padding: 0.1rem;
+    width: 2rem;
+    height: 2rem;
+    position: absolute;
+    content: '';
+    top: -0.5rem;
+    left: -0.2rem;
+    color: transparent;
+    border-radius: 2px;
+    background-repeat: no-repeat;
+    background-size: 1.2rem 1.2rem;
+    display: inline-block;
+    border: 2px solid #333;
+    background-color: #e6e6e6;
+}
+
+input[name='smoker']:checked::before {
+    background-color: #ffb765;
+    background-position: 0 0;
+    background-image: url('./check.png');
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+    border: 2px solid #ffb765;
+}
+
+
+/* ################ */
+/* Button Styling */
+/* ################ */
+
+button {
+    font-size: 1.2rem;
+    cursor: pointer;
+    text-decoration: none;
+}
+
+button[type=submit],
+.add,
+.delete-button {
+    border-radius: 2px;
+    color: #fff;
+    padding: 10px 20px;
+    text-decoration: none;
+    border-width: 0.5px;
+    outline: 0;
+}
+
+button[type=submit],
+.add {
+    width: 100%;
+}
+
+.add {
+    background: #3498db;
+}
+
+.add:hover {
+    background: #3cb0fd;
+}
+
+button[type=submit] {
+    background: #ff9c2a;
+}
+
+button[type=submit]:hover {
+    background: #ffb765;
+}
+
+.delete-button {
+    background-color: #ff392e;
+    padding: 5px 10px;
+    font-size: 1rem;
+    margin: 0 1rem;
+    float: right;
+}
+
+.delete-button:hover {
+    background-color: #ff6057;
+}
+
+.debug {
+    max-width: 100%;
+    white-space: pre-wrap;
+    word-wrap: break-word;
+}
+
+/* ################ */
+/* Error Styling */
+/* ################ */
+
+.error-div {
+    margin: 0.4rem auto;
+    max-width: 12rem;
+    width: 12rem;
+    float: right;
+}
+
+.error-text {
+    color: #d8000c;
+    margin: -0.3rem 0;
+    font-size: 1rem;
+    max-width: 100%;
+    text-align: left;
+}
+
+
+/* ################ */
+/* Mobile Styling */
+/* ################ */
+
+@media all
+    and (min-device-width: 300px)
+    and (max-device-width: 736px),
+    only screen and (max-width: 700px) {
+    body h1,
+    .builder {
+        border-radius: 0;
+    }
+
+    .household-text {
+        width: 100%;
+    }
+
+    .household-list {
+        margin-left: 0 !important;
+    }
+
+    .delete-button {
+        float: none;
+        width: 100%;
+        margin: 0.5rem auto;
+    }
+
+    input,
+    select {
+        width: 12rem;
+    }
+
+    input[name='smoker'] {
+        margin-right: 9.9rem;
+    }
+
+    form {
+        margin: 1rem 1rem;
+    }
+
+    body {
+        margin: 0;
+    }
+}
